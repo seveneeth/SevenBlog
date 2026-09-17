@@ -5,19 +5,19 @@
 
 export const siteConfig = {
   /** 站点标题（显示在导航栏和浏览器标题中） */
-  title: "UpXuu",
+  title: "SevenBolg",
   /** 站点副标题（用 "/" 分隔多句，首页打字动画会轮流展示） */
-  subtitle: "HI I AM UPXUU / UPXUU AND YOU",
+  subtitle: "HI I AM Seven/ Seven AND YOU",
   /** 站点描述（用于 SEO 和社交分享） */
-  description: "UpXuu's personal blog and portfolio",
+  description: "Seven's personal blog and portfolio",
   /** 作者名 */
-  author: "UpXuu",
+  author: "Seven",
   /** 站点 URL（影响 Canonical、Sitemap、OG、RSS 等所有绝对链接） */
   url: "https://upxuu.com", // Base URL of the site
   /** 作者头像 URL（导航栏、关于页、AuthorCard 等处使用） */
   avatar: "https://upxuu.com/images/me.jpg",
   /** 作者签名/座右铭（显示在 AuthorCard 侧边栏） */
-  signature: "逐光而上！",
+  signature: "一起加油！",
 
   /** 社交链接（AuthorCard、关于页、页脚等处使用） */
   socials: {
@@ -111,7 +111,6 @@ export const navConfig: {
     { name: "归档", href: "/posts" },
     { name: "统计", href: "/stats" },
     { name: "标签", href: "/tags" },
-    { name: "AI", href: "/ai" },
     { name: "音乐", href: "/music" },
   ],
   /**
@@ -125,7 +124,6 @@ export const navConfig: {
     { name: "归档页面", href: "/posts" },
     { name: "网站统计", href: "/stats" },
     { name: "标签", href: "/tags" },
-    { name: "AI", href: "/ai" },
     { name: "音乐", href: "/music" },
     { name: "建站统计", href: "/blogstats" },
   ],
