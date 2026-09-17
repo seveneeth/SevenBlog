@@ -1,0 +1,71 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      commit: ${{ steps.commit.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install -g pnpm@9
+      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm build
+        env:
+          INDEXNOW_SECRET: ${{ secrets.INDEXNOW_SECRET }}
+      - id: commit
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  deploy-caddy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - name: Deploy to Caddy server
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H 8.220.197.92 >> ~/.ssh/known_hosts 2>/dev/null
+          printf '%s\n' "${{ secrets.SERVER_SSH_KEY }}" | tr -d '\r' > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=yes -o ConnectTimeout=15" \
+            dist/ \
+            "${{ secrets.SERVER_USER }}@8.220.197.92:/var/www/upxuu/"
+
+  deploy-hk:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - name: Deploy to HK Nginx server
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H 47.243.228.164 >> ~/.ssh/known_hosts 2>/dev/null
+          sudo apt-get update -qq && sudo apt-get install -y -qq sshpass
+          # 先创建目标目录
+          sshpass -e ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=yes -o ConnectTimeout=15 \
+            root@47.243.228.164 "mkdir -p /opt/1panel/www/sites/upxuu/index"
+          # 再同步文件
+          rsync -avz --delete \
+            -e "sshpass -e ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=yes -o ConnectTimeout=15" \
+            dist/ \
+            "root@47.243.228.164:/opt/1panel/www/sites/upxuu/index/"
+        env:
+          SSHPASS: ${{ secrets.SERVER_PASSWORD }}
