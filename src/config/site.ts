@@ -23,9 +23,9 @@ export const siteConfig = {
 
   /** 社交链接（AuthorCard、关于页、页脚等处使用） */
   socials: {
-    github: "https://github.com/seveneeth/SevenBlog",
+    github: "https://github.com/seveneeth",
     /** GitHub 用户名（关于页拉取仓库列表用，大写） */
-    githubUser: "IMUPXUU",
+    githubUser: "seveneeth",
     bilibili: "https://space.bilibili.com/1721816127",
     /** Bilibili mid（关于页拉取视频列表用） */
     bilibiliMid: "1721816127",
@@ -131,7 +131,6 @@ export const footerConfig = {
   /** 页脚底部链接列表 */
   links: [
     { name: "友情链接", path: "/friends", external: false },
-    { name: "隐私政策", path: "/privacy", external: false },
   ],
   /** 页脚开源仓库文字 */
   repoText: "本站已开源 ",
@@ -184,7 +183,7 @@ export const seoConfig = {
  */
 export const bannerConfig = {
   /** Banner 主标题（一般等于站点标题） */
-  title: "seven's blog",
+  title: "Seven",
   /** 背景网格图案透明度（0-1） */
   gridPatternOpacity: 0.12,
   /** 各页面类型的标签文字 */

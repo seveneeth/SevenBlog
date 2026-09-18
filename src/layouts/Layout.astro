@@ -22,7 +22,7 @@ const footerChars = footerPosts.reduce((sum, p) => sum + countBodyChars(p.body |
   + footerTalks.reduce((sum, t) => sum + countBodyChars(t.body || ''), 0);
 const wordCountK = (footerChars / 1000).toFixed(1);
 
-const DEFAULT_BG_URL = 'https://img.upxuu.lcrworld.xyz/images/2026/7/1.webp';
+const DEFAULT_BG_URL = sitePath('/images/fengmian.jpg');
 
 interface Props {
   title?: string;
@@ -494,9 +494,9 @@ const isMusicPage = Astro.url.pathname === '/music' || Astro.url.pathname.starts
               <a href={infoConfig.footer.icp.link} target="_blank" rel="noopener noreferrer" class="text-[#0284c7] hover:underline">{infoConfig.footer.icp.text}</a>
             </>}
           </div>
-          {/* QQ 交流群 */}
+          {/* 本人QQ  */}
           <div>
-            <a href="https://qm.qq.com/q/mlH3QB1hC2" target="_blank" rel="noopener noreferrer" class="text-[#0284c7] hover:underline font-bold">欢迎点击加入upxuu的交流Q群 1103232422</a>
+            <a target="_blank" rel="noopener noreferrer" class="text-[#0284c7] hover:underline font-bold">欢迎加我 1092396610</a>
           </div>
           <div>
             <span>{footerConfig.repoText}</span><a href={footerConfig.repoUrl} class="hover:text-[#0ea5e9] underline font-bold">{footerConfig.repoDisplayName}</a>
