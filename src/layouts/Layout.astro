@@ -579,7 +579,8 @@ const isMusicPage = Astro.url.pathname === '/music' || Astro.url.pathname.starts
         return;
       }
 
-      if (el.dataset.bgUrl === url && el.classList.contains('is-ready')) {
+      var theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+      if (el.dataset.bgUrl === url && el.dataset.theme === theme && el.classList.contains('is-ready')) {
         if (loader) loader.classList.remove('is-on');
         return;
       }
@@ -587,6 +588,7 @@ const isMusicPage = Astro.url.pathname === '/music' || Astro.url.pathname.starts
       // Keep the current CSS background in place and only re-paint it with
       // the same image instead of swapping to an empty dot grid first.
       el.dataset.bgUrl = url;
+      el.dataset.theme = theme;
       paintBg();
 
       function paintBg() {
@@ -610,6 +612,7 @@ const isMusicPage = Astro.url.pathname === '/music' || Astro.url.pathname.starts
         var img = new Image();
         img.onload = function () {
           el.dataset.bgUrl = url;
+          el.dataset.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
           paintBg();
           resolve();
         };
