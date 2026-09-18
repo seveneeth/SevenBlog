@@ -111,10 +111,8 @@ export const navConfig: {
     { name: "音乐", href: "/music" },
     { name: "建站统计", href: "/blogstats" },
   ],
-  /** 外部链接项（桌面端"更多"下拉 + 移动端汉堡菜单底部） */
-  external: [
-    { name: "服务状态", href: "https://up.upxuu.com/status/1", external: true },
-  ],
+  /** 外部链接项（当前不显示外部导航） */
+  external: [],
 
 };
 

@@ -475,7 +475,7 @@ const isMusicPage = Astro.url.pathname === '/music' || Astro.url.pathname.starts
       )}
       
       {!hideFooter && (
-      <footer class="w-full select-none">
+      <footer class="w-full select-none dark:bg-slate-900/90">
         <div class="max-w-5xl mx-auto px-4 py-6 text-center text-xs font-mono text-black dark:text-slate-300 leading-relaxed space-y-3">
           {/* 导航链接：积木粗野主义按钮组 */}
           <div class="flex flex-wrap justify-center gap-2">
@@ -590,9 +590,13 @@ const isMusicPage = Astro.url.pathname === '/music' || Astro.url.pathname.starts
       paintBg();
 
       function paintBg() {
+        var isDark = document.documentElement.classList.contains('dark');
+        var overlay = isDark
+          ? 'linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)),'
+          : 'linear-gradient(rgba(250,248,245,0.45), rgba(250,248,245,0.45)),';
         el.style.backgroundImage =
           'radial-gradient(circle, rgba(253,246,227,0.35) 1px, transparent 1px),' +
-          'linear-gradient(rgba(250,248,245,0.45), rgba(250,248,245,0.45)),' +
+          overlay +
           'url(' + url + ')';
         el.style.backgroundSize = '24px 24px, cover, cover';
         el.style.backgroundPosition = '0 0, center, center';
@@ -645,6 +649,10 @@ const isMusicPage = Astro.url.pathname === '/music' || Astro.url.pathname.starts
       window.__xuhomeBgBeatInited = true;
       document.addEventListener('astro:after-swap', applySiteBg);
       document.addEventListener('astro:page-load', onPage);
+      new MutationObserver(applySiteBg).observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class'],
+      });
     }
   })();
 </script>
