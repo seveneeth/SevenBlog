@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { buildSummary } from '../utils/commitStats';
+import { sitePath } from '../utils/sitePath';
 
 // 首屏只内联聚合摘要（几 KB）；逐提交明细走 /data/commits/N.json 按需拉取
 const summary = buildSummary();
@@ -30,7 +31,7 @@ const busiest = summary.daily.reduce(
           </p>
         </div>
       </div>
-      <a href="/stats" class="chip-link">访问统计 →</a>
+      <a href={sitePath('/stats')} class="chip-link">访问统计 →</a>
     </div>
 
     {/* 概览数字 */}

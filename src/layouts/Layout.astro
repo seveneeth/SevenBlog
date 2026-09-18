@@ -11,6 +11,7 @@ import MusicPlayer from '../components/MusicPlayer.svelte';
 import { execSync } from 'child_process';
 import { getCollection } from 'astro:content';
 import { countBodyChars } from '../utils/wordCount.mjs';
+import { sitePath } from '../utils/sitePath';
 import '../index.css';
 
 // 页脚字数统计：与建站统计页共用同一口径（src/utils/wordCount.mjs），
@@ -482,7 +483,7 @@ const isMusicPage = Astro.url.pathname === '/music' || Astro.url.pathname.starts
           {/* 导航链接：积木粗野主义按钮组 */}
           <div class="flex flex-wrap justify-center gap-2">
             {infoConfig.footer.links.map((link) => (
-              <a href={link.path} target={link.external ? "_blank" : undefined} rel={link.external ? "noopener noreferrer" : undefined}
+              <a href={sitePath(link.path)} target={link.external ? "_blank" : undefined} rel={link.external ? "noopener noreferrer" : undefined}
                  class="px-3 py-1 border-2 border-[#0284c7] rounded-sm font-black text-xs text-[#0284c7] bg-[#fde68a] shadow-[2px_2px_0px_0px_#0284c7] hover:bg-[#0ea5e9] hover:text-white hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#0284c7] active:translate-y-0 active:shadow-[1px_1px_0px_0px_#0284c7] transition-all whitespace-nowrap">
                 {link.name}
               </a>
@@ -816,5 +817,4 @@ const isMusicPage = Astro.url.pathname === '/music' || Astro.url.pathname.starts
   setupBackToTop();
 }
 </script>
-
 

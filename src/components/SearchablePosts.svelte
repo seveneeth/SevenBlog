@@ -4,6 +4,7 @@
   import { flip } from 'svelte/animate';
   import { fade } from 'svelte/transition';
   import { siteConfig, i18nConfig } from '../config/site';
+  import { sitePath } from '../utils/sitePath';
 
   interface SearchablePost {
     id: string;
@@ -470,7 +471,7 @@
         {/if}
         <div class="bg-white dark:bg-slate-800 border-4 border-[#0284c7] rounded-sm p-0 flex flex-row overflow-hidden shadow-[6px_6px_0px_0px_#0284c7] hover:shadow-[10px_10px_0px_0px_#10b981] hover:-translate-y-1 transition-all duration-300">
           <div class="flex-1 p-3.5 sm:p-5 md:p-6 flex flex-col justify-between min-w-0">
-            <a href={`/posts/${encodeURIComponent(post.slug)}/`} class="block group">
+            <a href={sitePath(`/posts/${encodeURIComponent(post.slug)}/`)} class="block group">
               <h2 class="text-sm sm:text-base md:text-xl font-black text-[#0284c7] mb-1 md:mb-2 group-hover:text-[#0ea5e9] transition-colors leading-snug">
                 {post.title}
               </h2>
@@ -484,7 +485,7 @@
               <PageViews path={post.slug} />
               {#if post.category}
                 <a 
-                  href={`/category/${post.category}`}
+                  href={sitePath(`/category/${post.category}`)}
                   class="bg-[#fde68a] dark:bg-amber-700/50 border-2 border-[#0284c7] px-2 py-0.5 shadow-[1px_1px_0px_0px_#0284c7] text-[#0284c7] font-bold text-[10px] md:text-xs hover:bg-[#0284c7] hover:text-white transition-colors uppercase cursor-pointer shrink-0"
                 >
                   {post.category}
@@ -493,7 +494,7 @@
               {#if post.tags}
                 {#each post.tags.slice(0, 2) as tag}
                   <a 
-                    href={`/tag/${tag}`}
+                    href={sitePath(`/tag/${tag}`)}
                     class="bg-white dark:bg-slate-700 border-2 border-[#0284c7] text-slate-600 dark:text-slate-300 px-2 py-0.5 shadow-[1px_1px_0px_0px_#0284c7] font-bold text-[10px] md:text-xs hover:bg-[#0284c7] hover:text-white transition-colors cursor-pointer shrink-0"
                   >
                     #{tag}
@@ -503,7 +504,7 @@
             </div>
           </div>
           
-          <a href={`/posts/${encodeURIComponent(post.slug)}/`} class="w-[100px] sm:w-[130px] md:w-[190px] shrink-0 border-l-4 border-[#0284c7] relative bg-[#fde68a] flex items-center justify-center overflow-hidden">
+          <a href={sitePath(`/posts/${encodeURIComponent(post.slug)}/`)} class="w-[100px] sm:w-[130px] md:w-[190px] shrink-0 border-l-4 border-[#0284c7] relative bg-[#fde68a] flex items-center justify-center overflow-hidden">
             <img src={post.img || placeholderImg} alt={post.title} width="190" height="120" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" on:error={(e) => { const imgEl = e.currentTarget as HTMLImageElement; if (imgEl.src !== placeholderImg) { imgEl.src = placeholderImg; } }} />
           </a>
         </div>

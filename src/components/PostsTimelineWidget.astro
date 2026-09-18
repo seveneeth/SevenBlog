@@ -1,5 +1,6 @@
 ---
 import type { PostItem } from '../utils/postsFetcher';
+import { sitePath } from '../utils/sitePath';
 
 interface Props {
   posts: PostItem[];
@@ -49,7 +50,7 @@ const months = Object.keys(groupedPosts);
               const displayDate = dParts.length >= 3 ? `${dParts[1]}-${dParts[2]}` : '';
               return (
                 <a 
-                  href={`/posts/${encodeURIComponent(post.slug)}`}
+                  href={sitePath(`/posts/${encodeURIComponent(post.slug)}`)}
                   data-astro-prefetch
                   class="block text-[11px] font-bold text-[#0284c7]/80 hover:text-[#0ea5e9] cursor-pointer truncate transition-colors py-0.5 relative z-10"
                   title={post.title}

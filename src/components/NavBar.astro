@@ -1,5 +1,6 @@
 ---
 import { siteConfig, navConfig, i18nConfig } from '../config/site';
+import { sitePath } from '../utils/sitePath';
 
 const { pathname: rawPathname } = Astro.url;
 
@@ -7,9 +8,7 @@ const { pathname: rawPathname } = Astro.url;
 const nav = navConfig.desktop;
 const ext = navConfig.external;
 // GitHub Pages 的项目站点部署在 /SevenBlog/ 下；本地开发时则为 /。
-const withBase = (href: string) => href.startsWith('/')
-  ? `${import.meta.env.BASE_URL}${href.slice(1)}`
-  : href;
+const withBase = sitePath;
 const mob = navConfig.mobileMore.map((item) => ({
   ...item,
   href: withBase(item.href),

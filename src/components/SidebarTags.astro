@@ -1,4 +1,6 @@
 ---
+import { sitePath } from '../utils/sitePath';
+
 interface Props {
   tags: { name: string; count: number }[];
   activeTag: string | null;
@@ -19,7 +21,7 @@ const { tags, activeTag } = Astro.props;
     <div class="flex flex-wrap gap-2" id="sidebar-tags-container">
       {tags.map((tag, idx) => (
         <a
-          href={`/tag/${tag.name}`}
+          href={sitePath(`/tag/${tag.name}`)}
           class={`tag-item text-xs px-2.5 py-1 rounded-sm font-bold transition-all border-2 flex items-center gap-1 border-[#0284c7] ${
             activeTag === tag.name
               ? "bg-[#f59e0b] text-white"

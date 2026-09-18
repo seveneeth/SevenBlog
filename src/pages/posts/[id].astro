@@ -4,6 +4,7 @@ import { getProcessedPosts } from '../../utils/postsFetcher';
 import { getCollection } from 'astro:content';
 import { siteConfig, i18nConfig, contentConfig } from '../../config/site';
 import { calculateReadingTime } from '../../utils/readingTime';
+import { sitePath } from '../../utils/sitePath';
 
 import { WalineComment } from '../../components/WalineComment';
 
@@ -105,7 +106,7 @@ const relatedPosts = (() => {
                 
                 {post.category && (
                   <a 
-                    href={`/category/${post.category}`} 
+                    href={sitePath(`/category/${post.category}`)} 
                     class="bg-[#fde68a] border-2 border-[#0284c7] px-2.5 py-0.5 shadow-[2px_2px_0px_0px_#0284c7] text-center font-bold text-[#0284c7] text-xs hover:bg-[#0284c7] hover:text-white transition-colors"
                   >
                     {post.category}
@@ -116,7 +117,7 @@ const relatedPosts = (() => {
                   <div class="flex flex-wrap gap-2">
                     {post.tags.map(tag => (
                       <a 
-                        href={`/tag/${tag}`} 
+                        href={sitePath(`/tag/${tag}`)} 
                         class="text-xs font-bold bg-white border-2 border-[#0284c7] text-slate-600 px-2.5 py-0.5 shadow-[2px_2px_0px_0px_#0284c7] hover:bg-[#0284c7] hover:text-white transition-colors"
                       >
                         #{tag}
@@ -240,7 +241,7 @@ const relatedPosts = (() => {
               <div class="flex flex-wrap gap-2">
                 {relatedPosts.map(rp => (
                   <a
-                    href={`/posts/${encodeURIComponent(rp.slug)}`}
+                    href={sitePath(`/posts/${encodeURIComponent(rp.slug)}`)}
                     class="group bg-[#efe1bf] dark:bg-slate-700 border-2 border-[#0284c7] px-3 py-2 rounded-sm shadow-[3px_3px_0px_0px_#0284c7] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-200 inline-flex items-center gap-2"
                   >
                     <span class="text-xs font-black text-slate-700 dark:text-slate-200 group-hover:text-[#0ea5e9] transition-colors whitespace-nowrap">{rp.title}</span>
@@ -256,7 +257,7 @@ const relatedPosts = (() => {
         <div class="flex flex-col sm:flex-row gap-3 w-full animate-card-entrance opacity-0" style="animation-delay: 0.1s" data-prefetch="post-bottom">
           {prevPost ? (
             <a 
-              href={`/posts/${encodeURIComponent(prevPost.slug)}`}
+              href={sitePath(`/posts/${encodeURIComponent(prevPost.slug)}`)}
               class="flex-1 min-w-0 bg-[#efe1bf] dark:bg-slate-800 hover:bg-[#e8d4a6] dark:hover:bg-slate-700 border-3 border-[#0284c7] px-4 py-3 rounded-sm shadow-[4px_4px_0px_0px_#0284c7] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-200 flex items-center gap-3 group text-left"
             >
               <span class="text-[#0ea5e9] group-hover:-translate-x-1 transition-transform shrink-0 font-extrabold">❮</span>
@@ -273,7 +274,7 @@ const relatedPosts = (() => {
 
           {nextPost ? (
             <a 
-              href={`/posts/${encodeURIComponent(nextPost.slug)}`}
+              href={sitePath(`/posts/${encodeURIComponent(nextPost.slug)}`)}
               class="flex-1 min-w-0 bg-[#efe1bf] dark:bg-slate-800 hover:bg-[#e8d4a6] dark:hover:bg-slate-700 border-3 border-[#0284c7] px-4 py-3 rounded-sm shadow-[4px_4px_0px_0px_#0284c7] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-200 flex items-center justify-between gap-3 group text-right"
             >
               <div class="min-w-0 flex-1">

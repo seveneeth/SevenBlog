@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { TypeAnimation } from "react-type-animation";
 import { infoConfig } from "../config/info";
+import { sitePath } from "../utils/sitePath";
 
 interface PageBannerProps {
   pathname?: string;
@@ -165,7 +166,7 @@ export function PageBanner({
             hasRightContent ? "md:items-start text-center md:text-left" : "text-center"
           }`}
         >
-          <a href="/" className="hover:opacity-90 active:scale-98 transition-all inline-block">
+          <a href={sitePath('/')} className="hover:opacity-90 active:scale-98 transition-all inline-block">
             {isHome ? (
               <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#0284c7] mb-1.5 sm:mb-3 md:mb-5 tracking-widest transform -rotate-1 inline-block">
                 {infoConfig.banner.title}'s blog

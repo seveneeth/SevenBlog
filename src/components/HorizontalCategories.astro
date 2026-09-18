@@ -1,5 +1,6 @@
 ---
 import CalendarWidget from './CalendarWidget.svelte';
+import { sitePath } from '../utils/sitePath';
 
 interface Props {
   categories: { name: string; count: number }[];
@@ -54,7 +55,7 @@ const { categories, activeCategory, postsDataUrl = '' } = Astro.props;
       </div>
       
       <a
-        href="/"
+        href={sitePath('/')}
         class={`shrink-0 px-3 py-1 rounded-sm font-bold text-xs transition-all border-2 border-[#0284c7] shadow-[2px_2px_0px_0px_#0284c7] ${
           activeCategory === null
             ? "bg-[#0ea5e9] text-white"
@@ -66,7 +67,7 @@ const { categories, activeCategory, postsDataUrl = '' } = Astro.props;
       
       {categories.map((cat) => (
         <a
-          href={`/category/${cat.name}`}
+          href={sitePath(`/category/${cat.name}`)}
           class={`shrink-0 flex items-center gap-1.5 px-3 py-1 rounded-sm font-bold text-xs transition-all border-2 border-[#0284c7] shadow-[2px_2px_0px_0px_#0284c7] ${
             activeCategory === cat.name
               ? "bg-[#0ea5e9] text-white"

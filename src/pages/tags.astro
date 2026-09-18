@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { getProcessedPosts } from '../utils/postsFetcher';
 import { i18nConfig } from '../config/site';
+import { sitePath } from '../utils/sitePath';
 
 const allPosts = await getProcessedPosts();
 
@@ -40,7 +41,7 @@ const tags = Object.entries(tagMap)
       <div class="flex flex-wrap gap-3">
         {tags.map(tag => (
           <a
-            href={`/tag/${tag.name}`}
+            href={sitePath(`/tag/${tag.name}`)}
             class="group inline-flex items-center gap-2 px-4 py-2 bg-[rgba(250,248,245,0.55)] dark:bg-slate-700 border-2 border-[#0284c7] rounded-sm shadow-[3px_3px_0px_0px_#0284c7] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-200"
           >
             <span class="font-black text-sm text-slate-700 dark:text-slate-200 group-hover:text-[#0ea5e9] transition-colors">#{tag.name}</span>

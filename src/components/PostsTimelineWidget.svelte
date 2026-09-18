@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { sitePath } from '../utils/sitePath';
 
   interface TimelinePost {
     slug: string;
@@ -87,7 +88,7 @@
             <div class="archive-posts pl-3 border-l-2 border-dashed border-[#0284c7]/20 ml-[3px] space-y-2 animate-fade-in">
               {#each groupedPosts[ym] as post}
                 <a
-                  href={`/posts/${encodeURIComponent(post.slug)}`}
+                  href={sitePath(`/posts/${encodeURIComponent(post.slug)}`)}
                   data-astro-prefetch
                   class="block text-[11px] font-bold text-[#0284c7]/80 hover:text-[#0ea5e9] cursor-pointer truncate transition-colors py-0.5 relative z-10"
                   title={post.title}

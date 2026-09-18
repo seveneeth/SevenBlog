@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { i18nConfig } from '../config/site';
+import { sitePath } from '../utils/sitePath';
 ---
 
 <Layout title={i18nConfig.notFound.title} keywords={['404', '未找到', 'UpXuu']}>
@@ -11,13 +12,13 @@ import { i18nConfig } from '../config/site';
       <p class="text-lg sm:text-xl font-bold text-slate-600 mb-8">{i18nConfig.notFound.message}</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a 
-          href="/" 
+          href={sitePath('/')} 
           class="inline-block bg-[#0284c7] text-white font-black px-6 py-3 border-3 border-[#0284c7] shadow-[4px_4px_0px_0px_#fde68a] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all text-sm uppercase tracking-wider"
         >
           {i18nConfig.notFound.backHome}
         </a>
         <a 
-          href="/posts" 
+          href={sitePath('/posts')} 
           class="inline-block bg-[#fde68a] text-[#0284c7] font-black px-6 py-3 border-3 border-[#0284c7] shadow-[4px_4px_0px_0px_#0284c7] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all text-sm uppercase tracking-wider"
         >
           {i18nConfig.notFound.browseArchive}

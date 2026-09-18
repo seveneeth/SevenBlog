@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { sitePath } from '../utils/sitePath';
 ---
 
 <Layout title="Cache Debug" description="缓存调试面板">
@@ -15,7 +16,7 @@ import Layout from '../layouts/Layout.astro';
         <li>• <strong>HIT/MISS</strong>：点击文章时是否命中缓存</li>
       </ul>
       <div class="mt-4 flex gap-2">
-        <a href="/" class="px-4 py-2 bg-[#0284c7] text-white font-black text-sm rounded-sm hover:bg-[#0ea5e9] transition-colors">← 返回首页</a>
+        <a href={sitePath('/')} class="px-4 py-2 bg-[#0284c7] text-white font-black text-sm rounded-sm hover:bg-[#0ea5e9] transition-colors">← 返回首页</a>
       </div>
     </div>
   </div>

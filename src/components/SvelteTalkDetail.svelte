@@ -3,6 +3,7 @@
   import SvelteLightbox from './SvelteLightbox.svelte';
   import TalkShareModal from './TalkShareModal.svelte';
   import PageViews from './PageViews.svelte';
+  import { sitePath } from '../utils/sitePath';
 
   export let talk: TalkItem;
 
@@ -53,7 +54,7 @@
 <div class="max-w-[800px] mx-auto w-full space-y-6">
   <!-- Back button -->
   <div class="mb-6 flex justify-start select-none animate-card-entrance opacity-0">
-     <a href="/talks" class="px-3 py-1.5 border-3 border-[#0284c7] bg-white dark:bg-slate-700 text-[#0284c7] dark:text-slate-200 flex items-center gap-1.5 hover:bg-[#0ea5e9] hover:text-white transition-colors cursor-pointer rounded-sm shadow-[4px_4px_0px_0px_#0284c7] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all font-black uppercase text-xs">
+     <a href={sitePath('/talks')} class="px-3 py-1.5 border-3 border-[#0284c7] bg-white dark:bg-slate-700 text-[#0284c7] dark:text-slate-200 flex items-center gap-1.5 hover:bg-[#0ea5e9] hover:text-white transition-colors cursor-pointer rounded-sm shadow-[4px_4px_0px_0px_#0284c7] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all font-black uppercase text-xs">
         <span>&lsaquo; BACK TO TALKS</span>
      </a>
   </div>
@@ -148,7 +149,7 @@
   <div id="waline-placeholder"></div>
 
   <div class="mt-8 text-center flex justify-center pb-12 select-none">
-      <a href="/talks" class="px-6 py-3 border-4 border-[#0284c7] text-[#0284c7] bg-white dark:bg-slate-700 font-black hover:bg-[#0284c7] hover:text-white transition-all cursor-pointer rounded-sm shadow-[6px_6px_0px_0px_#0284c7] uppercase tracking-widest text-sm flex items-center justify-center hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none">
+      <a href={sitePath('/talks')} class="px-6 py-3 border-4 border-[#0284c7] text-[#0284c7] bg-white dark:bg-slate-700 font-black hover:bg-[#0284c7] hover:text-white transition-all cursor-pointer rounded-sm shadow-[6px_6px_0px_0px_#0284c7] uppercase tracking-widest text-sm flex items-center justify-center hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none">
         返回列表 / Back to Talks
       </a>
   </div>
