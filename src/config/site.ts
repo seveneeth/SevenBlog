@@ -1,3 +1,5 @@
+import { sitePath } from '../utils/sitePath';
+
 /**
  * 站点基础配置
  * 包含站点名称、作者、URL、头像、社交账号、外部服务等
@@ -15,7 +17,7 @@ export const siteConfig = {
   /** 站点 URL（影响 Canonical、Sitemap、OG、RSS 等所有绝对链接） */
   url: "https://seveneeth.github.io/SevenBlog", // GitHub Pages URL
   /** 作者头像 URL（导航栏、关于页、AuthorCard 等处使用） */
-  avatar: "",
+  avatar: sitePath('/images/me.jpg'),
   /** 作者签名/座右铭（显示在 AuthorCard 侧边栏） */
   signature: "一起加油！",
 
@@ -47,7 +49,7 @@ export const siteConfig = {
   /** 图片 CDN / 默认封面 */
   assets: {
     /** 文章列表缺省封面图（为空时使用随机图） */
-    defaultPostCover: "",
+    defaultPostCover: sitePath('/images/fengmian.jpg'),
     /** 随机图服务地址（当文章无封面时 fallback 使用，返回 JSON 需解析 url 字段） */
     randomImage: "https://bing.biturl.top/",
     /** 站点 favicon 路径（相对站点根目录） */
@@ -111,7 +113,6 @@ export const navConfig: {
   ],
   /** 外部链接项（桌面端"更多"下拉 + 移动端汉堡菜单底部） */
   external: [
-    { name: "开往", href: "https://www.travellings.cn/go.html", external: true },
     { name: "服务状态", href: "https://up.upxuu.com/status/1", external: true },
   ],
 
@@ -130,8 +131,6 @@ export const footerConfig = {
   /** 页脚底部链接列表 */
   links: [
     { name: "友情链接", path: "/friends", external: false },
-    { name: "RSS", path: "/rss.xml", external: true },
-    { name: "Sitemap", path: "/sitemap.xml", external: true },
     { name: "隐私政策", path: "/privacy", external: false },
   ],
   /** 页脚开源仓库文字 */
@@ -147,13 +146,13 @@ export const footerConfig = {
  */
 export const seoConfig = {
   /** 默认页面标题（无 title 时使用） */
-  defaultTitle: "Seven's blog",
+  defaultTitle: "Seven",
   /** 标题后缀（拼接到每个页面 title 之后） */
   titleTemplate: " - Seven's blog",
   /** 默认页面描述 */
   defaultDescription: "Seven 的个人博客，记录一位独立开发者的生活随笔、编程实践与技术思考。涵盖 Web 开发、Astro 建站、开源项目与日常感悟，用文字连接数字世界的每一份热爱。",
   /** 默认 OG 图片 URL */
-  defaultImage: "https://upxuu.com/images/me.jpg",
+  defaultImage: sitePath('/images/fengmian.jpg'),
   /** SEO 关键词 */
   keywords: ["Seven", "blog", "开发者", "生活", "学习", "技术分享", "seven的碎碎念"],
   /** Twitter Card 配置 */
@@ -361,7 +360,7 @@ export const i18nConfig = {
   privacy: {
     title: "隐私政策",
     description: "Seven 博客的隐私政策——我们如何收集、使用和保护你的个人信息。",
-    lastUpdated: "2026 年 9 月 128日",
+    lastUpdated: "2026 年 9 月 18日",
     effectiveDate: "2026 年 9 月 18 日",
     contactEmail: "me@Seven.com",
   },

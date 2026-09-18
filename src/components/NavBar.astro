@@ -121,17 +121,6 @@ const isBlogStatsPage = pathname === '/blogstats';
         <span>{nav[6].name}</span>
       </a>
 
-      <a
-        href={ext[0].href}
-        target="_blank" rel="noopener noreferrer"
-        class={`hidden xl:flex px-1.5 py-0.5 sm:px-3 sm:py-1.5 border-2 border-[#0284c7] items-center gap-0.5 sm:gap-1.5 hover:bg-[#0ea5e9] hover:text-white transition-colors cursor-pointer rounded-sm font-black uppercase text-xs sm:text-sm tracking-wider shrink-0 whitespace-nowrap text-[#0284c7] shadow-[1px_1px_0px_0px_#fde68a] sm:shadow-[2px_2px_0px_0px_#fde68a] bg-[rgba(250,248,245,0.55)]`}
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 sm:w-4 sm:h-4 stroke-[2.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-        </svg>
-        <span>{ext[0].name}</span>
-      </a>
-
       <button
         id="dark-mode-toggle"
         data-theme-toggle
@@ -165,12 +154,6 @@ const isBlogStatsPage = pathname === '/blogstats';
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 18V5l12-2v13M9 18a3 3 0 01-6 0M12 16V6l-3 12m15-1a3 3 0 01-6 0" /></svg>
             {nav[6].name}
           </a>
-          <a href={ext[0].href} target="_blank" rel="noopener noreferrer" class="xl:hidden p-2 border border-[#0284c7]/20 flex items-center justify-center gap-1.5 hover:bg-[#0ea5e9] hover:text-white transition-colors cursor-pointer rounded-sm font-black uppercase text-[11px] tracking-wider bg-[#ebf3ff] dark:bg-slate-700 text-[#0284c7] select-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-            </svg>
-            {ext[0].name}
-          </a>
           <a href={mob[1].href} class="md:hidden p-2 border border-[#0284c7]/20 flex items-center justify-center gap-1.5 hover:bg-[#0ea5e9] hover:text-white transition-colors cursor-pointer rounded-sm font-black uppercase text-[11px] tracking-wider select-none bg-[rgba(250,248,245,0.55)] dark:bg-slate-700 text-[#0284c7]">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -196,11 +179,11 @@ const isBlogStatsPage = pathname === '/blogstats';
             </svg>
             {mob[5].name}
           </a>
-          <a href={ext[1].href} target="_blank" class="p-2 border border-[#0284c7]/20 flex items-center justify-center gap-1.5 hover:bg-[#0ea5e9] hover:text-white transition-colors cursor-pointer rounded-sm font-black uppercase text-[11px] tracking-wider select-none bg-[rgba(250,248,245,0.55)] dark:bg-slate-700 text-[#0284c7]">
+          <a href={ext[0].href} target="_blank" class="p-2 border border-[#0284c7]/20 flex items-center justify-center gap-1.5 hover:bg-[#0ea5e9] hover:text-white transition-colors cursor-pointer rounded-sm font-black uppercase text-[11px] tracking-wider select-none bg-[rgba(250,248,245,0.55)] dark:bg-slate-700 text-[#0284c7]">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
             </svg>
-            {ext[1].name}
+            {ext[0].name}
           </a>
         </div>
       </div>
@@ -262,25 +245,14 @@ const isBlogStatsPage = pathname === '/blogstats';
           <a href={mob[1].href} class={`p-2 border border-[#0284c7]/20 flex items-center justify-center gap-1.5 hover:bg-[#0ea5e9] hover:text-white transition-colors cursor-pointer rounded-sm font-black uppercase text-[11px] tracking-wider select-none ${isAboutPage ? "bg-[#0ea5e9] text-white" : "bg-[rgba(250,248,245,0.55)] dark:bg-slate-700 text-[#0284c7]"}`}>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>{mob[1].name}
           </a>
-          <a
-            href={ext[0].href}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="p-2 border border-[#0284c7]/20 flex items-center justify-center gap-1.5 hover:bg-[#0ea5e9] hover:text-white transition-colors cursor-pointer rounded-sm font-black uppercase text-[11px] tracking-wider bg-[#ebf3ff] dark:bg-slate-700 text-[#0284c7] select-none"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-[#0ea5e9] stroke-[2.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-            </svg>
-            <span>{ext[0].name}</span>
-          </a>
           <a href={mob[2].href} class={`p-2 border border-[#0284c7]/20 flex items-center justify-center gap-1.5 hover:bg-[#0ea5e9] hover:text-white transition-colors cursor-pointer rounded-sm font-black uppercase text-[11px] tracking-wider select-none ${isArchivePage ? "bg-[#0ea5e9] text-white" : "bg-[rgba(250,248,245,0.55)] dark:bg-slate-700 text-[#0284c7]"}`}>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
             </svg>
             {mob[2].name}
           </a>
-          <a href={ext[1].href} target="_blank" class="p-2 border border-[#0284c7]/20 flex items-center justify-center gap-1.5 hover:bg-[#0ea5e9] hover:text-white transition-colors cursor-pointer rounded-sm font-black uppercase text-xs sm:text-sm tracking-wider select-none bg-[rgba(250,248,245,0.55)] dark:bg-slate-700 text-[#0284c7]">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>{ext[1].name}
+          <a href={ext[0].href} target="_blank" class="p-2 border border-[#0284c7]/20 flex items-center justify-center gap-1.5 hover:bg-[#0ea5e9] hover:text-white transition-colors cursor-pointer rounded-sm font-black uppercase text-xs sm:text-sm tracking-wider select-none bg-[rgba(250,248,245,0.55)] dark:bg-slate-700 text-[#0284c7]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>{ext[0].name}
           </a>
           <a href={mob[3].href} class={`p-2 border border-[#0284c7]/20 flex items-center justify-center gap-1.5 hover:bg-[#0ea5e9] hover:text-white transition-colors cursor-pointer rounded-sm font-black uppercase text-[11px] tracking-wider select-none ${isTagsPage ? "bg-[#0ea5e9] text-white" : "bg-[rgba(250,248,245,0.55)] dark:bg-slate-700 text-[#0284c7]"}`}>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82zM7 7h.01" /></svg>{mob[3].name}

@@ -1,4 +1,4 @@
-# UpXuu 的个人博客 / UpXuu's Personal Blog
+# Seven 的个人博客 / Seven's Personal Blog
 
 > 基于 Astro 构建的极简粗野主义风格博客。Toy Brick Brutalism — 大胆的蓝色边框、手绘质感、积木堆叠美学。
 > A brutalism-style personal blog built with Astro. Toy Brick Brutalism — bold blue borders, hand-drawn textures, brick-stacking aesthetics.
@@ -10,7 +10,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript)](https://www.typescriptlang.org)
 [![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?logo=vercel)](https://vercel.com)
 
-**在线地址 / Live Site:** []()
+**在线地址 / Live Site:** [https://seveneeth.github.io/SevenBlog/](点击这里)
 
 ---
 
