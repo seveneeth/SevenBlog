@@ -15,7 +15,7 @@ export const siteConfig = {
   /** 站点 URL（影响 Canonical、Sitemap、OG、RSS 等所有绝对链接） */
   url: "https://seveneeth.github.io/SevenBlog", // GitHub Pages URL
   /** 作者头像 URL（导航栏、关于页、AuthorCard 等处使用） */
-  avatar: "https://upxuu.com/images/me.jpg",
+  avatar: "",
   /** 作者签名/座右铭（显示在 AuthorCard 侧边栏） */
   signature: "一起加油！",
 
@@ -24,18 +24,16 @@ export const siteConfig = {
     github: "https://github.com/seveneeth/SevenBlog",
     /** GitHub 用户名（关于页拉取仓库列表用，大写） */
     githubUser: "IMUPXUU",
-    bilibili: "https://space.bilibili.com/3546855124240550",
+    bilibili: "https://space.bilibili.com/1721816127",
     /** Bilibili mid（关于页拉取视频列表用） */
-    bilibiliMid: "3546855124240550",
+    bilibiliMid: "1721816127",
     /** AuthorCard 上显示的 Bilibili 文字 */
     bilibiliDisplayName: "UPXUU",
-    email: "upxuu@outlook.com",
-    website: "https://upxuu.com",
+    email: "2092396610@qq.com",
     /** 关于页额外社交链接 */
-    wechat: "@imljxu",
-    qq: "3697773416",
+    wechat: "@seven",
+    qq: "2092396610",
     /** QQ群链接（欢迎提示中使用） */
-    qqGroup: "https://qun.qq.com/universal-share/share?ac=1&authKey=NZ9BP%2BPT44nu34JWAL4Jdz25Bq7ueQoOfOqA4iYPT1JvQKYktml43kgBTMfqTkNl&busi_data=eyJncm91cENvZGUiOiIxMTAzMjMyNDIyIiwidG9rZW4iOiJTZDh2RmhWbXFTL3ZHbVBXeXhJZndQTVcrOUlhNXRSNlczVG1GNUIzQnlQejFZSThWYStSSEVEWUtDcHdHSTM3IiwidWluIjoiMzY5Nzc3MzQxNiJ9&data=HZcezojmJTU_U4qRqv_3ODAb7vm86b6wP8YEp9Stz5b4EzngKNFllXJneyVO7qr4u-plsM84FyvpZl6kkuyZgg&svctype=4&tempid=h5_group_info",
     /** 订阅链接（欢迎提示中的"订阅"按钮，指向 GitHub Issues 等） */
     subscribe: "https://github.com/seveneeth/SevenBlog/issues",
   },
@@ -43,7 +41,7 @@ export const siteConfig = {
   /** 评论系统配置 */
   waline: {
     /** Waline 服务端地址 */
-    serverURL: 'https://comment.upxuu.com',
+    serverURL: '',
   },
 
   /** 图片 CDN / 默认封面 */
@@ -113,8 +111,11 @@ export const navConfig: {
   ],
   /** 外部链接项（桌面端"更多"下拉 + 移动端汉堡菜单底部） */
   external: [
+    { name: "开往", href: "https://www.travellings.cn/go.html", external: true },
+    { name: "服务状态", href: "https://up.upxuu.com/status/1", external: true },
     { name: "QQ群", href: siteConfig.socials.qqGroup, external: true },
   ],
+
 };
 
 /**
@@ -230,7 +231,6 @@ export const welcomeConfig = {
   sessionKey: "xuhome_visit_flag",
   /** 提示中的快捷链接 */
   quickLinks: [
-    { name: "QQ群", href: siteConfig.socials.qqGroup, color: "blue" },
     { name: "订阅", href: siteConfig.socials.subscribe, color: "green" },
     { name: "RSS", href: "", action: "copyRss", color: "orange" },
   ],
@@ -251,18 +251,6 @@ export const contentConfig = {
     /** 许可协议链接 */
     url: "/about",
   },
-  /** AI 摘要模型列表（url 为完整请求地址） */
-  aiSummaryModels: [
-    { id: 'gpt-oss', name: 'GPT-OSS-120B', url: 'https://blogapi.upxuu.com/summarize', hasThinking: false },
-    { id: 'gemma', name: 'Gemma-4-31b-it (OpenRouter)', url: 'https://blogapi.upxuu.com/summarize2', hasThinking: true },
-    { id: 'deepseek-r1', name: 'DeepSeek-R1', url: 'https://blogapi.upxuu.com/summarize3', hasThinking: true },
-  ],
-  /** AI 对话模型列表（url 为完整请求地址） */
-  aiChatModels: [
-    { id: 'gpt-oss', name: 'GPT-OSS-120B', url: 'https://blogapi.upxuu.com/chat', hasThinking: false },
-    { id: 'gemma', name: 'Gemma-4-31b-it (OpenRouter)', url: 'https://blogapi.upxuu.com/chat2', hasThinking: true },
-    { id: 'deepseek-r1', name: 'DeepSeek-R1', url: 'https://blogapi.upxuu.com/chat3', hasThinking: true },
-  ],
 };
 
 /**
@@ -276,7 +264,7 @@ export const aboutConfig = {
   /** 角色标签 */
   role: "前端开发者 / 独立创作者",
   /** 简介文字（{author} 会被替换为 siteConfig.author） */
-  intro: `你好，世界！我是 ${siteConfig.author}-(ljx)。一个名大二学生cs\n目前专注于学习前端 Python和ai相关技术，立志成为ai时代的全栈工程师,加油！`,
+  intro: `你好，世界！我是 ${siteConfig.author}，个名大二学生\n目前专注于学习前端 Python和ai相关技术，立志成为ai时代的全栈工程师,加油！`,
   /** 技能标签列表 */
   skills: [
     "React", "HTML", "Node.js",  "CSS","Python",
@@ -287,19 +275,18 @@ export const aboutConfig = {
   /** Bilibili 板块标题 */
   bilibiliTitle: "MY bilibili @SEVEN",
   /** GitHub 仓库链接（关于页"找到我"区块） */
-  githubLink: "https://github.com/Imupxuu",
+  githubLink: "https://github.com/seveneeth",
   /** GitHub 显示文字 */
-  githubValue: "@ImUpXuu\nupxuu",
+  githubValue: "@seveneeth\nseven",
   /** 邮箱显示文字 */
-  emailValue: "ME@UPXUU.COM",
+  emailValue: "ME@QQ.COM",
   /** 邮箱链接 */
-  emailLink: "mailto:ME@UPXUU.COM",
+  emailLink: "mailto:ME@QQ.COM",
   /** 微信显示文字 */
-  wechatValue: "@imljxu",
+  wechatValue: "@seven",
   /** QQ 显示文字 */
   qqValue: "2092396610",
   /** GitHub Socials 区块的邮箱链接 */
-  socialEmailLink: "mailto:me@upxuu.com",
 };
 
 /**
