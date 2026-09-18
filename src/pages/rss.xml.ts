@@ -33,7 +33,11 @@ function beijingRfc2822(value: unknown): string {
   return `${days[utc.getUTCDay()]}, ${String(utc.getUTCDate()).padStart(2, '0')} ${months[utc.getUTCMonth()]} ${utc.getUTCFullYear()} ${String(utc.getUTCHours()).padStart(2, '0')}:${String(utc.getUTCMinutes()).padStart(2, '0')}:${String(utc.getUTCSeconds()).padStart(2, '0')} GMT`;
 }
 
-function escapeXml(s: string): string {
+function escapeXml(value: unknown): string {
+  // Content frontmatter is user-authored and may omit optional fields. RSS
+  // generation must still succeed in that case rather than failing on
+  // `undefined.replace(...)`.
+  const s = typeof value === 'string' ? value : value == null ? '' : String(value);
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 }
 
@@ -74,7 +78,7 @@ export async function GET(context: APIContext) {
       return {
         pubDate,
         sortTime: new Date(pubDate).getTime(),
-        html: renderItem(post.data.title, url, desc, pubDate, content, author),
+        html: renderItem(post.data.title || slug || '未命名文章', url, desc, pubDate, content, author),
       };
     }),
     ...talks.map((talk) => {
@@ -90,7 +94,7 @@ export async function GET(context: APIContext) {
       return {
         pubDate,
         sortTime: new Date(pubDate).getTime(),
-        html: renderItem(`「说说」${talk.data.title}`, url, desc, pubDate, content, author),
+        html: renderItem(`「说说」${talk.data.title || slug || '未命名说说'}`, url, desc, pubDate, content, author),
       };
     }),
   ]
