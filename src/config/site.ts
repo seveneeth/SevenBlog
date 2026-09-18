@@ -21,7 +21,7 @@ export const siteConfig = {
 
   /** 社交链接（AuthorCard、关于页、页脚等处使用） */
   socials: {
-    github: "https://github.com/ImUpXuu",
+    github: "https://github.com/seveneeth/SevenBlog",
     /** GitHub 用户名（关于页拉取仓库列表用，大写） */
     githubUser: "IMUPXUU",
     bilibili: "https://space.bilibili.com/3546855124240550",
@@ -32,32 +32,18 @@ export const siteConfig = {
     email: "upxuu@outlook.com",
     website: "https://upxuu.com",
     /** 关于页额外社交链接 */
-    twitter: "https://x.com/IMUPXUU",
-    youtube: "https://youtube.com/@UpXuu",
     wechat: "@imljxu",
     qq: "3697773416",
     /** QQ群链接（欢迎提示中使用） */
     qqGroup: "https://qun.qq.com/universal-share/share?ac=1&authKey=NZ9BP%2BPT44nu34JWAL4Jdz25Bq7ueQoOfOqA4iYPT1JvQKYktml43kgBTMfqTkNl&busi_data=eyJncm91cENvZGUiOiIxMTAzMjMyNDIyIiwidG9rZW4iOiJTZDh2RmhWbXFTL3ZHbVBXeXhJZndQTVcrOUlhNXRSNlczVG1GNUIzQnlQejFZSThWYStSSEVEWUtDcHdHSTM3IiwidWluIjoiMzY5Nzc3MzQxNiJ9&data=HZcezojmJTU_U4qRqv_3ODAb7vm86b6wP8YEp9Stz5b4EzngKNFllXJneyVO7qr4u-plsM84FyvpZl6kkuyZgg&svctype=4&tempid=h5_group_info",
     /** 订阅链接（欢迎提示中的"订阅"按钮，指向 GitHub Issues 等） */
-    subscribe: "https://github.com/ImUpXuu/xuhome/issues",
+    subscribe: "https://github.com/seveneeth/SevenBlog/issues",
   },
 
   /** 评论系统配置 */
   waline: {
     /** Waline 服务端地址 */
     serverURL: 'https://comment.upxuu.com',
-  },
-
-  /** 访问统计 — Umami（可配多个实例，留空数组则不加载） */
-  analytics: {
-    umami: [
-      { src: "https://stats.upxuu.com/script.js", id: "cd983d6c-e011-489d-903f-4757ce41c14d" },
-    ],
-    /** 站点统计 API（页脚访问量/在线人数、欢迎提示调用） */
-    statsApi: {
-      alltime: 'https://blogapi.476543.xyz/statsapi/alltime',
-      active: 'https://blogapi.476543.xyz/api/active',
-    },
   },
 
   /** 图片 CDN / 默认封面 */
@@ -71,7 +57,7 @@ export const siteConfig = {
   },
 
   /** 站点运行起始时间（页脚"已在互联网中航行"计时器用） */
-  startTime: new Date(2025, 8, 30, 20, 20, 0),
+  startTime: new Date(2026, 9, 18, 12, 20, 0),
 
   /** 外部链接安全配置 — 可信域名（点击这些域名的外链不弹确认框） */
   trustedDomains: [
@@ -109,7 +95,6 @@ export const navConfig: {
     { name: "友链", href: "/friends" },
     { name: "关于", href: "/about" },
     { name: "归档", href: "/posts" },
-    { name: "统计", href: "/stats" },
     { name: "标签", href: "/tags" },
     { name: "音乐", href: "/music" },
   ],
@@ -122,15 +107,12 @@ export const navConfig: {
     { name: "友链", href: "/friends" },
     { name: "关于", href: "/about" },
     { name: "归档页面", href: "/posts" },
-    { name: "网站统计", href: "/stats" },
     { name: "标签", href: "/tags" },
     { name: "音乐", href: "/music" },
     { name: "建站统计", href: "/blogstats" },
   ],
   /** 外部链接项（桌面端"更多"下拉 + 移动端汉堡菜单底部） */
   external: [
-    { name: "开往", href: "https://www.travellings.cn/go.html", external: true },
-    { name: "服务状态", href: "https://up.upxuu.com/status/1", external: true },
     { name: "QQ群", href: siteConfig.socials.qqGroup, external: true },
   ],
 };
@@ -140,11 +122,10 @@ export const navConfig: {
  */
 export const footerConfig = {
   /** 版权文字 */
-  copyrightText: "© 2026 UpXuu. All Rights Reserved. ",
+  copyrightText: "© 2026 Seven. All Rights Reserved. ",
   /** ICP 备案信息（留空则不显示） */
   icp: {
-    text: "",
-    link: "https://icp.gov.moe/?keyword=20269996",
+    
   },
   /** 页脚底部链接列表 */
   links: [
@@ -156,9 +137,9 @@ export const footerConfig = {
   /** 页脚开源仓库文字 */
   repoText: "本站已开源 ",
   /** 页脚开源仓库链接 */
-  repoUrl: "https://github.com/ImUpXuu/xuhome",
+  repoUrl: "https://github.com/seveneeth/SevenBlog",
   /** 页脚开源仓库显示名 */
-  repoDisplayName: "IMUPXUU/XUHOME",
+  repoDisplayName: "SEVENEETH/SEVENBLOG",
 };
 
 /**
@@ -166,20 +147,20 @@ export const footerConfig = {
  */
 export const seoConfig = {
   /** 默认页面标题（无 title 时使用） */
-  defaultTitle: "UpXuu's blog",
+  defaultTitle: "Seven's blog",
   /** 标题后缀（拼接到每个页面 title 之后） */
-  titleTemplate: " - UpXuu's blog",
+  titleTemplate: " - Seven's blog",
   /** 默认页面描述 */
-  defaultDescription: "UpXuu 的个人博客，记录一位独立开发者的生活随笔、编程实践与技术思考。涵盖 Web 开发、Astro 建站、开源项目与日常感悟，用文字连接数字世界的每一份热爱。",
+  defaultDescription: "Seven 的个人博客，记录一位独立开发者的生活随笔、编程实践与技术思考。涵盖 Web 开发、Astro 建站、开源项目与日常感悟，用文字连接数字世界的每一份热爱。",
   /** 默认 OG 图片 URL */
   defaultImage: "https://upxuu.com/images/me.jpg",
   /** SEO 关键词 */
-  keywords: ["UpXuu", "blog", "开发者", "生活", "学习", "技术分享", "upxuu的碎碎念"],
+  keywords: ["Seven", "blog", "开发者", "生活", "学习", "技术分享", "seven的碎碎念"],
   /** Twitter Card 配置 */
   twitter: {
     card: "summary_large_image",
-    site: "@ImUpXuu",
-    creator: "@ImUpXuu",
+    site: "@seven",
+    creator: "@seven",
   },
   /** DNS 预解析域名列表 */
   dnsPrefetch: [
@@ -200,7 +181,7 @@ export const seoConfig = {
  */
 export const bannerConfig = {
   /** Banner 主标题（一般等于站点标题） */
-  title: "UpXuu",
+  title: "seven's blog",
   /** 背景网格图案透明度（0-1） */
   gridPatternOpacity: 0.12,
   /** 各页面类型的标签文字 */
@@ -213,7 +194,7 @@ export const bannerConfig = {
   /** 说说页打字动画内容 */
   talkTicker: {
     sequence: [
-      "upxuu的碎碎念~",
+      "seven的碎碎念~",
       2500,
       "LIFE AND STUDY",
       2500,
@@ -226,9 +207,9 @@ export const bannerConfig = {
  */
 export const subtitleConfig = {
   sequence: [
-    "HI I AM UPXUU",
+    "HI I AM SEVEN",
     2500,
-    "UPXUU AND YOU",
+    "SEVEN AND YOU",
     2500,
   ],
 };
@@ -291,20 +272,20 @@ export const aboutConfig = {
   /** 关于页浏览器标题 */
   title: "关于我",
   /** 关于页 SEO 描述 */
-  description: "UpXuu的个人介绍、独立开发者履历与前端技术栈栈架构建。",
+  description: "Seven的个人介绍、独立开发者履历与前端技术栈栈架构建。",
   /** 角色标签 */
   role: "前端开发者 / 独立创作者",
   /** 简介文字（{author} 会被替换为 siteConfig.author） */
-  intro: `你好，世界！我是 ${siteConfig.author}-(ljx)。一个在sb河北上学的cs\n目前专注于学习前端 Python（其实是上学罢了） 热爱分享，持续折腾（hardly）。`,
+  intro: `你好，世界！我是 ${siteConfig.author}-(ljx)。一个名大二学生cs\n目前专注于学习前端 Python和ai相关技术，立志成为ai时代的全栈工程师,加油！`,
   /** 技能标签列表 */
   skills: [
-    "React", "TypeScript", "Node.js", "Astro", "Tailwind CSS",
-    "Next.js", "Vue", "Vite", "Git", "Figma",
+    "React", "HTML", "Node.js",  "CSS","Python",
+    "Next.js",, "Vite", "Git", "AI",
   ],
   /** GitHub 介绍文字 */
-  githubBio: "HI I am UpXuu. A developer, student, simple people from HeBei, China.",
+  githubBio: "HI I am Seven. A developer, student, simple people from JiangXi, China.",
   /** Bilibili 板块标题 */
-  bilibiliTitle: "MY bilibili @UPXUU",
+  bilibiliTitle: "MY bilibili @SEVEN",
   /** GitHub 仓库链接（关于页"找到我"区块） */
   githubLink: "https://github.com/Imupxuu",
   /** GitHub 显示文字 */
@@ -316,7 +297,7 @@ export const aboutConfig = {
   /** 微信显示文字 */
   wechatValue: "@imljxu",
   /** QQ 显示文字 */
-  qqValue: "3697773416",
+  qqValue: "2092396610",
   /** GitHub Socials 区块的邮箱链接 */
   socialEmailLink: "mailto:me@upxuu.com",
 };
@@ -347,9 +328,9 @@ export const i18nConfig = {
   /** 首页 */
   home: {
     /** 首页浏览器标题（传给 Layout 的 title） */
-    title: "UPXUU的博客",
+    title: "Seven的博客",
     /** 首页 SEO 描述 */
-    description: "UpXuu 的个人博客，分享 Web 开发、Astro 建站与开源项目实践的技术文章，以及一名初中生的日常随笔与生活思考。原创内容覆盖前端开发、Vite 生态、AI 应用与中考纪实，适合开发者与年轻创作者阅读。",
+    description: "Seven 的个人博客，分享 Web 开发、Astro 建站与开源项目实践的技术文章，以及大二学生的日常随笔与生活思考。原创内容覆盖前端开发、Vite 生态、AI 应用和平时生活分享，适合开发者与年轻创作者阅读。",
     /** 首页文章列表区块标题 */
     sectionTitle: "最新文章",
   },
@@ -360,7 +341,7 @@ export const i18nConfig = {
     /** 说说页区块标题 */
     sectionTitle: "说说",
     /** 说说列表页 SEO 描述 */
-    description: "UpXuu 的说说微动态——生活碎碎念、随手记录与日常分享。",
+    description: "Seven 的说说微动态——生活碎碎念、随手记录与日常分享。",
   },
   /** 说说详情页 */
   talk: {
@@ -372,27 +353,27 @@ export const i18nConfig = {
     /** 分类页标题后缀（拼在分类名后） */
     titleSuffix: " 分类",
     /** 分类页描述模板（{name} 会被替换为分类名） */
-    descriptionTemplate: "{name} 分类下的全部文章 - UpXuu的个人博客",
+    descriptionTemplate: "{name} 分类下的全部文章 - Seven的个人博客",
   },
   /** 标签页 */
   tag: {
     /** 标签页标题后缀（拼在标签名后） */
     titleSuffix: " 标签",
     /** 标签页描述模板（{name} 会被替换为标签名） */
-    descriptionTemplate: "标签 {name} 下的全部文章 - UpXuu的个人博客",
+    descriptionTemplate: "标签 {name} 下的全部文章 - Seven的个人博客",
   },
   /** 友链页面 */
   friends: {
     title: "友情链接",
-    description: "UpXuu的友情链接，汇集各路神仙的有趣博客、个人小站。",
+    description: "Seven的友情链接，汇集各路神仙的有趣博客、个人小站。",
   },
   /** 隐私政策页面 */
   privacy: {
     title: "隐私政策",
-    description: "UpXuu 博客的隐私政策——我们如何收集、使用和保护你的个人信息。",
-    lastUpdated: "2026 年 8 月 12 日",
-    effectiveDate: "2026 年 8 月 12 日",
-    contactEmail: "me@upxuu.com",
+    description: "Seven 博客的隐私政策——我们如何收集、使用和保护你的个人信息。",
+    lastUpdated: "2026 年 9 月 128日",
+    effectiveDate: "2026 年 9 月 18 日",
+    contactEmail: "me@Seven.com",
   },
   /** 统计页面 */
   stats: {

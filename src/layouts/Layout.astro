@@ -183,9 +183,6 @@ const isMusicPage = Astro.url.pathname === '/music' || Astro.url.pathname.starts
     <link rel="stylesheet" href="https://img.upxuu.lcrworld.xyz/font/fonts.css" />
     {!isArticle && <link rel="preload" as="image" href={DEFAULT_BG_URL} fetchpriority="high" />}
 
-    {siteConfig.analytics.umami.map(u => (
-      <script defer src={u.src} data-website-id={u.id}></script>
-    ))}
     <script type="text/javascript">
       /* Clarity：页面 load 后再加载，不阻塞首屏 */
       window.addEventListener('load', function() {
@@ -817,4 +814,3 @@ const isMusicPage = Astro.url.pathname === '/music' || Astro.url.pathname.starts
   setupBackToTop();
 }
 </script>
-
