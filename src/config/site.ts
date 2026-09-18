@@ -113,7 +113,6 @@ export const navConfig: {
   external: [
     { name: "开往", href: "https://www.travellings.cn/go.html", external: true },
     { name: "服务状态", href: "https://up.upxuu.com/status/1", external: true },
-    { name: "QQ群", href: siteConfig.socials.qqGroup, external: true },
   ],
 
 };
@@ -166,12 +165,16 @@ export const seoConfig = {
   /** DNS 预解析域名列表 */
   dnsPrefetch: [
     "//f.xxu6.top",
-    "//" + new URL(siteConfig.waline.serverURL).host,
+    ...(siteConfig.waline.serverURL
+      ? ["//" + new URL(siteConfig.waline.serverURL).host]
+      : []),
   ],
   /** 预连接资源列表 */
   preconnect: [
     { url: "https://f.xxu6.top", crossOrigin: "anonymous" },
-    { url: siteConfig.waline.serverURL, crossOrigin: "anonymous" },
+    ...(siteConfig.waline.serverURL
+      ? [{ url: siteConfig.waline.serverURL, crossOrigin: "anonymous" }]
+      : []),
   ],
   /** robots meta 内容 */
   robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
