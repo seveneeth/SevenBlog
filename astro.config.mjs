@@ -20,7 +20,9 @@ export default defineConfig({
     compressHTML: true,
   },
   integrations: [react(), svelte(), mdx()],
-  site: 'https://upxuu.com',
+  // GitHub Pages 项目站点会部署在 /SevenBlog/ 子路径下。
+  site: 'https://seveneeth.github.io',
+  base: '/SevenBlog',
   redirects: {
     '/talk': {
       destination: '/talks',

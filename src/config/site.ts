@@ -13,7 +13,7 @@ export const siteConfig = {
   /** 作者名 */
   author: "Seven",
   /** 站点 URL（影响 Canonical、Sitemap、OG、RSS 等所有绝对链接） */
-  url: "https://upxuu.com", // Base URL of the site
+  url: "https://seveneeth.github.io/SevenBlog", // GitHub Pages URL
   /** 作者头像 URL（导航栏、关于页、AuthorCard 等处使用） */
   avatar: "https://upxuu.com/images/me.jpg",
   /** 作者签名/座右铭（显示在 AuthorCard 侧边栏） */
