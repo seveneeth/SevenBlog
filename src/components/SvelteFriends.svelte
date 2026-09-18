@@ -3,6 +3,9 @@
   import { friendsConfig, type Friend } from "../config/friends";
   import { siteConfig } from "../config/site";
 
+  const siteUrl = siteConfig.url.replace(/\/$/, "");
+  const siteAvatarUrl = new URL(siteConfig.avatar, `${siteUrl}/`).toString();
+
   let searchTerm = "";
   let copied = false;
   let shuffled: Friend[] = [];
@@ -29,7 +32,7 @@
   }
 
   function copyTemplate() {
-    const text = `=== 友链申请信息 ===\n名称: UpXuu's blog\n链接: https://upxuu.com\n头像: https://upxuu.com/images/me.jpg\n介绍: 逐光而上\n====================`;
+    const text = `=== 友链申请信息 ===\n名称: ${siteConfig.title}\n链接: ${siteUrl}\n头像: ${siteAvatarUrl}\n介绍: ${siteConfig.description}\n====================`;
     copyText(text, "全部");
   }
 
@@ -226,17 +229,17 @@
           </span>
           
           <ul class="space-y-1.5 text-xs text-slate-600 list-none leading-loose">
-            <li on:click={() => copyText("UpXuu's blog", "站点名称")} class="cursor-pointer hover:bg-slate-100 rounded-sm px-1 -mx-1 transition-colors">
-              <strong class="text-slate-800">站点名称：</strong> UpXuu's blog
+            <li on:click={() => copyText(siteConfig.title, "站点名称")} class="cursor-pointer hover:bg-slate-100 rounded-sm px-1 -mx-1 transition-colors">
+              <strong class="text-slate-800">站点名称：</strong> {siteConfig.title}
             </li>
-            <li on:click={() => copyText("https://upxuu.com", "站点域名")} class="cursor-pointer hover:bg-slate-100 rounded-sm px-1 -mx-1 transition-colors">
-              <strong class="text-slate-800">站点域名：</strong> https://upxuu.com
+            <li on:click={() => copyText(siteUrl, "站点域名")} class="cursor-pointer hover:bg-slate-100 rounded-sm px-1 -mx-1 transition-colors">
+              <strong class="text-slate-800">站点域名：</strong> {siteUrl}
             </li>
-            <li on:click={() => copyText("https://upxuu.com/images/me.jpg", "站点头像")} class="cursor-pointer hover:bg-slate-100 rounded-sm px-1 -mx-1 transition-colors">
-              <strong class="text-slate-800">站点头像：</strong> https://upxuu.com/images/me.jpg
+            <li on:click={() => copyText(siteAvatarUrl, "站点头像")} class="cursor-pointer hover:bg-slate-100 rounded-sm px-1 -mx-1 transition-colors">
+              <strong class="text-slate-800">站点头像：</strong> {siteAvatarUrl}
             </li>
-            <li on:click={() => copyText("逐光而上", "站点简介")} class="cursor-pointer hover:bg-slate-100 rounded-sm px-1 -mx-1 transition-colors">
-              <strong class="text-slate-800">站点简介：</strong> 逐光而上
+            <li on:click={() => copyText(siteConfig.description, "站点简介")} class="cursor-pointer hover:bg-slate-100 rounded-sm px-1 -mx-1 transition-colors">
+              <strong class="text-slate-800">站点简介：</strong> {siteConfig.description}
             </li>
           </ul>
 
