@@ -14,6 +14,8 @@ import { rehypeExternalLinks } from './src/plugins/rehype-external-links.mjs';
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
+  // 项目的静态图片实际保存在 scripts/public；发布时把它复制到站点根目录。
+  publicDir: './scripts/public',
   outDir: 'dist',
   build: {
     inlineStylesheets: 'never',

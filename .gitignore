@@ -3,6 +3,7 @@ build/
 public/*.txt
 waline*.json
 dist/
+build-verify/
 .astro/
 coverage/
 .DS_Store
